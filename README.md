@@ -4,3 +4,5 @@ For my startup application, I amd going to build off the prompt of a voting plat
 ![StartupApplicationSketch](https://user-images.githubusercontent.com/101128049/215238322-15184b38-522e-421c-a017-3b5c458e22aa.png)
 
 EXIT VIM: esc :wq (escape key, then shift-semicolon, w and q) don't need to be held down!
+
+Command to update webpage: pscp -r .\website-html\ ubuntu@pokeguesser.click:public_html
