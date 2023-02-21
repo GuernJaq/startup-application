@@ -12,12 +12,12 @@ VSCode made creating and changing the website super easy, since I could just use
 
 SIMON CSS NOTES:
 Use 
-<link
+<code><link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
             integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
             crossorigin="anonymous"
-/>
+/></code>
 to include Bootstrap and make styling easier, goes directly in html, works by having class in each element to define behavior and color
 Define separate elements with class="" in the name and giving details in the css file
 Use flex and/or grid to have page dynamically resize with window, and use @media(condition) to create specific states based on window size/shape
