@@ -6,25 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- This is a placeholder for when you start using CSS -->
     <link rel="stylesheet" href="index.css" />
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            crossorigin="anonymous"
+      />
     <title>Startup Homepage</title>
   </head>
   <body>
-    <header>
+    <header class="main-header text-center text-light">
       <h1>Jaquelyn Guernsey</h1>
-      <img src="ProfilePic.png" alt="me" />
+      <img src="..\ImageFiles\ProfilePic.png" alt="me" />
     </header>
-    <main>
+    <main class="container-fluid bg-secondary text-center text-light">
       <section>
         <h2>About me</h2>
         <p>
-          I'm not really sure what to put here... I'm a CS student and big nerd, hence the pokemon idea for my website.
-        </p>
-        <p>
-          This is paragraph two, I'm not sure what to put here but hi
-        </p>
-        <p>
-          Personalize this page to what you would like. This is your chance to
-          experiment and show off how awesome you are.
+          Hey! My name is Jaquelyn Guernsey and this is my site! Currently I don't have many ideas for what to put here, but I hope you enjoy anyway.
         </p>
       </section>
       <section>
@@ -35,32 +34,39 @@
       </section>
       <section>
         <h2>Simon project</h2>
-        <p>
+        <p class="link">
           <a href="https://simon.pokeguesser.click/index.html">Simon Home</a>
         </p>
       </section>
       <section>
         <h2>Web programming assignments</h2>
-        <p>Replace the links below with your CodePen links.</p>
         <h3>HTML</h3>
-        <ul>
-          <li>
-            <a href="https://codepen.io/GuernJaq/pen/OJwqZJQ">Introduction</a>
-            - Basic HTML page example
-          </li>
-          <li>
-            <a href="https://codepen.io/GuernJaq/pen/LYBadbw">Structure</a> -
-            All the elements for creating page structure
-          </li>
-          <li>
-            <a href="https://codepen.io/GuernJaq/pen/rNrRdZR">Input</a> - All
-            the elements for receiving user input
-          </li>
-          <li>
-            <a href="https://codepen.io/GuernJaq/pen/VwBRxbW">Media</a> - All
-            the elements for rendering media objects
-          </li>
-        </ul>
+        <table class="table table-striped-columns">
+          <thead class="table-links-header">
+            <tr>
+              <th>Link</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody class="table-links">
+            <tr>
+              <td ><a href="https://codepen.io/GuernJaq/pen/OJwqZJQ">Introduction</a></td>
+              <td>Basic HTML page example</td>
+            </tr>
+            <tr>
+              <td><a href="https://codepen.io/GuernJaq/pen/LYBadbw">Structure</a></td>
+              <td>All the elements for creating page structure</td>
+            </tr>
+            <tr>
+              <td><a href="https://codepen.io/GuernJaq/pen/rNrRdZR">Input</a></td>
+              <td>All the elements for receiving user input</td>
+            </tr>
+            <tr>
+              <td><a href="https://codepen.io/GuernJaq/pen/VwBRxbW">Media</a></td>
+              <td>All the elements for rendering media objects</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </main>
   </body>
