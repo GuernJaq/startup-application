@@ -61,6 +61,10 @@ footer a{
 .custom-btn:hover{
     background-color: #7573c1;
 }
+meter{
+    min-height: 30px;
+    min-width: 500px;
+}
 
 
 @media (max-height: 600px){
