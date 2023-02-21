@@ -9,3 +9,17 @@ Command to update webpage: pscp -r .\website-html\ ubuntu@pokeguesser.click:publ
 
 NOTES FOR SIMON: 
 VSCode made creating and changing the website super easy, since I could just use the live server extension and then refresh the browser page to watch my changes in real-time. The most difficult part was getting out of Safe Mode and then finding the button to launch the server. As I followed along with the example code and typed it all out, I was able to see some of the structures that we had used in earlier lessons put to use, and how the formatting worked all together. It's going to be very interesting to put this knowledge and experience to work in my application later on.
+
+SIMON CSS NOTES:
+Use 
+<link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+            crossorigin="anonymous"
+/>
+to include Bootstrap and make styling easier, goes directly in html, works by having class in each element to define behavior and color
+Define separate elements with class="" in the name and giving details in the css file
+Use flex and/or grid to have page dynamically resize with window, and use @media(condition) to create specific states based on window size/shape
+flex: proportion minimum-size, proportion meaning if you have one with 1 and another with 3, first is 1/4 and second is 3/4 of page
+        
