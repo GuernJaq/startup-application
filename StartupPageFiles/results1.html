@@ -21,6 +21,9 @@
                 <a class="navbar-brand" href="#">Poké-Guesser</a>
                 <menu class="navbar-nav">
                     <li class="nav-item">
+                        <a class="nav-link" href="../MainPage/index.html">Homepage</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="login.html">Login</a>
                     </li>
                     <li class="nav-item">
@@ -38,24 +41,32 @@
                 <p>Placeholder image</p>
                 <img src="Images/PoketrainerFin.png" alt="placeholder image" />
             </div>
-            <ul class="bar-graph-improv">
-                <li>
-                    <label for="meter">Pikachu</label>
-                    <meter id="meter" min="0" max="100" value="10" low="33" high="66" optimum="100"></meter>
-                </li>
-                <li>
-                    <label for="meter">Eevee</label>
-                    <meter id="meter" min="0" max="100" value="10" low="33" high="66" optimum="100"></meter>
-                </li>
-                <li>
-                    <label for="meter">Johnathan</label>
-                    <meter id="meter" min="0" max="100" value="10" low="33" high="66" optimum="100"></meter>
-                </li>
-                <li>
-                    <label for="meter">Alomomola</label>
-                    <meter id="meter" min="0" max="100" value="10" low="33" high="66" optimum="100"></meter>
-                </li>
-            </ul>
+            <table class="table table-striped-columns">
+                <thead class="table-links-header">
+                    <tr>
+                        <th>Pokémon</th>
+                        <th>Percent</th>
+                    </tr>
+                </thead>
+                <tbody class="table-links">
+                    <tr>
+                        <td ><a>Pikachu</a></td>
+                        <td><meter id="meter" min="0" max="100" value="10" low="33" high="66" optimum="100"></meter></td>
+                    </tr>
+                    <tr>
+                        <td><a>Eevee</a></td>
+                        <td><meter id="meter" min="0" max="100" value="10" low="33" high="66" optimum="100"></meter></td>
+                    </tr>
+                    <tr>
+                        <td><a>Johnathan</a></td>
+                        <td><meter id="meter" min="0" max="100" value="10" low="33" high="66" optimum="100"></meter></td>
+                    </tr>
+                    <tr>
+                        <td><a>Alomomola</a></td>
+                        <td><meter id="meter" min="0" max="100" value="10" low="33" high="66" optimum="100"></meter></td>
+                    </tr>
+                </tbody>
+            </table>
         </main>
 
         <footer>
