@@ -11,7 +11,8 @@ NOTES FOR SIMON:
 VSCode made creating and changing the website super easy, since I could just use the live server extension and then refresh the browser page to watch my changes in real-time. The most difficult part was getting out of Safe Mode and then finding the button to launch the server. As I followed along with the example code and typed it all out, I was able to see some of the structures that we had used in earlier lessons put to use, and how the formatting worked all together. It's going to be very interesting to put this knowledge and experience to work in my application later on.
 
 SIMON CSS NOTES:
-Use 
+Use
+
 <code>
 link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
@@ -19,10 +20,11 @@ link
             integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
             crossorigin="anonymous"
 </code>
-to include Bootstrap and make styling easier, goes directly in html, works by having class in each element to define behavior and color
-Define separate elements with class="" in the name and giving details in the css file
-Use flex and/or grid to have page dynamically resize with window, and use @media(condition) to create specific states based on window size/shape
-flex: proportion minimum-size, proportion meaning if you have one with 1 and another with 3, first is 1/4 and second is 3/4 of page
+
+to include Bootstrap and make styling easier, goes directly in html, works by having class in each element to define behavior and color.
+Define separate elements with class="" in the name and giving details in the css file.
+Use flex and/or grid to have page dynamically resize with window, and use @media(condition) to create specific states based on window size/shape.
+flex: proportion minimum-size, proportion meaning if you have one with 1 and another with 3, first is 1/4 and second is 3/4 of page.
 
 STARTUP HTML AND CSS NOTES:
 So far I've powered through most of the code using knowledge from past projects, and I'm very happy with how it looks at the moment. As of this moment, I've managed to make a prototype bar graph as depicted in my sketch using meters. While I'm fairly certain there's a better way to do this, I won't be able to implement any of it until I at the very least learn javascript and most likely until I learn about websockets. I'm pretty happy with my placeholder solution, I'm going to convert it from a list to a table so they're all lined up, but other than that they work well as placeholders. I also still need to make several image assets so I have a placeholder image, I may make those before this segment is due though so this may be a moot point. Custom classes are amazing, I've been using several to style specific sections (see also the gross main page of my site). The rest of my pages had similar formatting to the Simon pages, so I was able to rebuild it from memory with the changes and additions to make it my own. Overall, super happy with the visuals and I feel I have enough base understanding of css and html to add more pages if I so desire.
