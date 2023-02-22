@@ -9,6 +9,13 @@ header{
     background-color: rgb(69,69,90);
 }
 
+.back-button{
+    text-align: right;
+    flex: 1;
+    padding-right: 0.3em;
+    color: white;
+}
+
 main{
     background-color: rgb(120,120,150);
     flex: 1 calc(100vh - 110px);
