@@ -46,13 +46,13 @@
 
             <div class="game">
                 <div class="button-container">
-                    <button id="green" class="button-top-left" onclick="game.pressButton(this)"></button>
-                    <button id="red" class="button-top-right" onclick="game.pressButton(this)"></button>
-                    <button id="yellow" class="button-bottom-left" onclick="game.pressButton(this)"></button>
-                    <button id="blue" class="button-bottom-right" onclick="game.pressButton(this)"></button>
+                    <button id="green" class="game-button button-top-left" onclick="game.pressButton(this)"></button>
+                    <button id="red" class="game-button button-top-right" onclick="game.pressButton(this)"></button>
+                    <button id="yellow" class="game-button button-bottom-left" onclick="game.pressButton(this)"></button>
+                    <button id="blue" class="game-button button-bottom-right" onclick="game.pressButton(this)"></button>
                     <div class="controls center">
                         <div class="game-name">Simon<sup>&reg;</sup></div>
-                        <div class="score center">--</div>
+                        <div id="score" class="score center">--</div>
                         <button class="btn btn-danger" onclick="game.reset()">Reset</button>
                     </div>
                 </div>
@@ -65,6 +65,7 @@
                 <a class="text-reset" href="https://github.com/GuernJaq/simon">Github</a>
             </div>
         </footer>
+
         <script src="play.js"></script>
     </body>
 </html>
