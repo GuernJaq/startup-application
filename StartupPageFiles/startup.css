@@ -46,10 +46,11 @@ menu{
     list-style: none;
 }
 
-.navbar-brand{
+.navbar-dark{
     font-size: large;
     border-bottom: solid rgb(30,30,69) ;
     padding-left: 0.3em;
+    background-color: rgb(69,69,90);
 }
 menu .nav-item{
     padding: 0 0.3em;

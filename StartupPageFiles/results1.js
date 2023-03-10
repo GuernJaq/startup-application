@@ -7,8 +7,10 @@ function loadTestData(){
 }
 
 function loadScores(){
-    let names = ['Pikachu','Eevee','Ditto','Alomomola'];
-    let total = localStorage.getItem('numVotes')
+    const names = ['Pikachu','Eevee','Ditto','Alomomola'];
+    const total = Number(localStorage.getItem('numVotes'))
+    const correctNum = localStorage.getItem('Alomomola')
+    console.log(total)
 
     const tableBodyEl = document.getElementById('bar-graph');
 
@@ -16,13 +18,11 @@ function loadScores(){
         names.forEach((name) => {
             const nameTdEl = document.createElement('td');
             const meterTdEl = document.createElement('td');
-            const votesText = localStorage.getItem('Eevee');
-            console.log(votesText)
 
             nameTdEl.textContent = name;
             
-            fullMeter = document.createElement('meter')
-            meterTdEl.textContent = '<meter id="meter" min="0" max="'+total+'" value="'+localStorage.getItem(name)+'" low="33" high="66" optimum="'+localStorage.getItem('Alomomola')+'"></meter>'
+            meterTdEl.innerHTML = '<meter min="0" max="'+total+'" value="'+localStorage.getItem(name)+'" low="'+correctNum+'" high="'+correctNum+'" optimum="'+correctNum+'"></meter>'
+
 
             const rowEl = document.createElement('tr');
             rowEl.appendChild(nameTdEl);
