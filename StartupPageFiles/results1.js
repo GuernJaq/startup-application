@@ -5,32 +5,35 @@ function loadTestData(){
     localStorage.setItem('Alomomola',5)
     localStorage.setItem('numVotes',45)
 }
+class loadTable{
+    loadScores(){
+        const names = ['Pikachu','Eevee','Ditto','Alomomola'];
+        const total = Number(localStorage.getItem('numVotes'))
+        const correctNum = localStorage.getItem('Alomomola')
+        console.log(total)
 
-function loadScores(){
-    const names = ['Pikachu','Eevee','Ditto','Alomomola'];
-    const total = Number(localStorage.getItem('numVotes'))
-    const correctNum = localStorage.getItem('Alomomola')
-    console.log(total)
+        const tableBodyEl = document.getElementById('bar-graph');
 
-    const tableBodyEl = document.getElementById('bar-graph');
+        if(names.length){
+            names.forEach((name) => {
+                const nameTdEl = document.createElement('td');
+                const meterTdEl = document.createElement('td');
 
-    if(names.length){
-        names.forEach((name) => {
-            const nameTdEl = document.createElement('td');
-            const meterTdEl = document.createElement('td');
-
-            nameTdEl.textContent = name;
-            
-            meterTdEl.innerHTML = '<meter min="0" max="'+total+'" value="'+localStorage.getItem(name)+'" low="'+correctNum+'" high="'+correctNum+'" optimum="'+correctNum+'"></meter>'
+                nameTdEl.textContent = name;
+                
+                meterTdEl.innerHTML = '<meter min="0" max="'+total+'" value="'+localStorage.getItem(name)+'" low="'+correctNum+'" high="'+correctNum+'" optimum="'+correctNum+'"></meter>'
 
 
-            const rowEl = document.createElement('tr');
-            rowEl.appendChild(nameTdEl);
-            rowEl.appendChild(meterTdEl);
+                const rowEl = document.createElement('tr');
+                rowEl.appendChild(nameTdEl);
+                rowEl.appendChild(meterTdEl);
 
-            tableBodyEl.appendChild(rowEl);
-        })
-    }else{
-        tableBodyEl.innerHTML = '<tr><td colSpan=4>Oopsie</td></tr>';
+                tableBodyEl.appendChild(rowEl);
+            })
+        }else{
+            tableBodyEl.innerHTML = '<tr><td colSpan=4>Oopsie</td></tr>';
+        }
     }
 }
+
+const currTable = new loadTable()
