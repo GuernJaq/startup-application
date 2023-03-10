@@ -8,6 +8,9 @@ header{
     flex: 0 80px;
     background-color: rgb(69,69,90);
 }
+#result-btn{
+    padding:20px;
+}
 
 .back-button{
     text-align: right;

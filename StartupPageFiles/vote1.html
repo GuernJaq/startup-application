@@ -35,21 +35,23 @@
         </header>
 
         <main class="container-fluid text-center">
+            <div class="players">Player:
+                <span class="player-name">Mystery player</span></div>
             <div class="container-fluid">
                 <img src="Images/PokeGuess1.png" alt="First guess, its Alomomola if you're cheating here ;)" class="guess-image" />
-                <form method="get" action="results1.html">
-                    <button type="submit" class=" btn btn-danger">Click for result page!(temp until javascript)</button>
-                </form>
+                <div id="alert">test</div>
+                <div id="result">test2</div>
             </div>
             <div>
                 <h1>Who's that Pokémon?</h1>
             </div>
             <div class="container">
-                <button class="custom-btn">Pikachu</button>
-                <button class="custom-btn">Eevee</button>
-                <button class="custom-btn">Ditto</button>
-                <button class="custom-btn">Alomomola</button>
+                <button id="pika"class="guess-btn custom-btn" onclick="userVote.pressButton(this)">Pikachu</button>
+                <button id="eevee" class="guess-btn custom-btn" onclick="userVote.pressButton(this)">Eevee</button>
+                <button id="ditto" class="guess-btn custom-btn" onclick="userVote.pressButton(this)">Ditto</button>
+                <button id="alomo" class="guess-btn custom-btn" onclick="userVote.pressButton(this)">Alomomola</button>
             </div>
+            <div id="result-btn">test3</div>
         </main>
 
         <footer>
@@ -58,5 +60,7 @@
                 <a class="text-reset" href="https://github.com/GuernJaq/startup-application">Github</a>
             </div>
         </footer>
+        
+        <script src="vote1.js"></script>
     </body>
 </html>
