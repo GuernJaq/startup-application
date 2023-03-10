@@ -6,6 +6,7 @@
         <title>Results</title>
         <link rel="icon" href="Images/PokeGuessIcon.png"/>
         <link rel="stylesheet" href="startup.css"/>
+        <script src="results1.js"></script>
 
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
@@ -48,25 +49,11 @@
                         <th>Percent</th>
                     </tr>
                 </thead>
-                <tbody class="table-links">
-                    <tr>
-                        <td ><a>Pikachu</a></td>
-                        <td><meter id="meter" min="0" max="100" value="10" low="33" high="66" optimum="100"></meter></td>
-                    </tr>
-                    <tr>
-                        <td><a>Eevee</a></td>
-                        <td><meter id="meter" min="0" max="100" value="10" low="33" high="66" optimum="100"></meter></td>
-                    </tr>
-                    <tr>
-                        <td><a>Ditto</a></td>
-                        <td><meter id="meter" min="0" max="100" value="10" low="33" high="66" optimum="100"></meter></td>
-                    </tr>
-                    <tr>
-                        <td><a>Alomomola</a></td>
-                        <td><meter id="meter" min="0" max="100" value="10" low="33" high="66" optimum="100"></meter></td>
-                    </tr>
-                </tbody>
+                <tbody id="bar-graph">Woop</tbody>
             </table>
+            <button type="submit" class=" btn btn-danger" onclick="localStorage.clear()">Click to clear storage</button>
+            <button type="submit" class="btn btn-warning" onclick="loadTestData()">Click to load test data</button>
+            <button type="submit" class="btn btn-success" onclick="loadScores()">Load</button>
         </main>
 
         <footer>

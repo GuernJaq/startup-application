@@ -1,8 +1,8 @@
 const btnDescriptions = [
-    {name: 'pika',correct:false},
-    {name: 'eevee',correct:false},
-    {name: 'ditto',correct:false},
-    {name: 'alomo',correct:true},
+    {name: 'Pikachu',correct:false},
+    {name: 'Eevee',correct:false},
+    {name: 'Ditto',correct:false},
+    {name: 'Alomomola',correct:true},
 ];
 class Button{
     constructor(description, el){
@@ -14,7 +14,7 @@ class UserVote{
     buttons;
     constructor(){
         this.buttons = new Map()
-        btnDescriptions.forEach((el,i) => {
+        btnDescriptions.forEach((el) => {
             this.buttons.set(el.name,el.correct);
         });
 
@@ -61,10 +61,17 @@ class UserVote{
             delay(4000).then((e) => {alert.innerHTML =''})
         }else{
             votes.push(newVote);
+            //localStorage.setItem('scores',JSON.stringify(scores))
+            const currVotes = localStorage.getItem(vote)
+            let newVotes = JSON.parse(currVotes)
+            newVotes++;
+            localStorage.setItem(vote,newVotes)
+            
             const numVotes = localStorage.getItem('numVotes')
-            let totVotes = 0
-            totVotes = JSON.parse(numVotes)
+            let totVotes = JSON.parse(numVotes)
             totVotes++;
+            localStorage.setItem('numVotes',totVotes)
+
             let correct = this.buttons.get(vote)
             if(correct){
                 const result = document.getElementById('result')
