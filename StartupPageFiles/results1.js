@@ -48,3 +48,11 @@ class loadTable{
 }
 
 const currTable = new loadTable()
+
+function delay(milliseconds){
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(true);
+        }, milliseconds);
+    });
+}

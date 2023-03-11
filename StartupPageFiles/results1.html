@@ -16,7 +16,7 @@
         />
     </head>
 
-    <body>
+    <body onload="currTable.loadScores()">
         <header>
             <nav class="navbar fixed-top navbar-dark">
                 <a class="navbar-brand" href="#">Poké-Guesser</a>
@@ -49,12 +49,12 @@
                         <th>Percent</th>
                     </tr>
                 </thead>
-                <tbody id="bar-graph">Key: Red - incorrect | Green: correct</tbody>
+                <tbody id="bar-graph" onload="currTable.loadScores()">Key: Red - incorrect | Green: correct</tbody>
             </table>
             
             <button type="submit" class=" btn btn-danger" onclick="localStorage.clear(); document.getElementById('bar-graph').innerHTML = '';">Click to clear storage</button>
             <button type="submit" class="btn btn-warning" onclick="loadTestData(); document.getElementById('bar-graph').innerHTML = '';">Click to load test data</button>
-            <button type="submit" class="btn btn-success" onclick="currTable.loadScores()">Load</button>
+            <button type="submit" class="btn btn-success" onclick="currTable.loadScores()">Reload Table</button>
         </main>
 
         <footer>
