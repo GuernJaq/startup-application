@@ -13,8 +13,7 @@ VSCode made creating and changing the website super easy, since I could just use
 SIMON CSS NOTES:
 Use
 
-<code>
-link
+<code>link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
             integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
@@ -35,3 +34,6 @@ Javascript has been a toughie to learn- I intend to come back to this later and 
 GENERAL JS NOTES: 
 async functions allow use of await
 DOM = document. used for editing html and css in js code
+
+STARTUP JS NOTES:
+My startup javascript is very similar to a lot of the Simon code, so I was able to repurpose some of those pieces to get a basis for my application. I've built the results storage and table generation in such a way that once I learn remote storage I'm hoping the transition will be smooth. The hardest part for me was figuring out how to use DOM to change the colors of meters based on their names, since the colors are defined by values within the meter that I don't fully understand. I'm hoping to add some other voting/results pages so I'd like to have code that's easy to adjust for different pokemon guesses, and I believe I've accomplished that. By adjusting some minor values I should be able to make some more guess pages. I won't add those right at this moment but those commits may be up by the time this is graded. 
