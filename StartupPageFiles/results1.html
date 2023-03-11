@@ -49,10 +49,11 @@
                         <th>Percent</th>
                     </tr>
                 </thead>
-                <tbody id="bar-graph">Woop</tbody>
+                <tbody id="bar-graph">Key: Red - incorrect | Green: correct</tbody>
             </table>
-            <button type="submit" class=" btn btn-danger" onclick="localStorage.clear()">Click to clear storage</button>
-            <button type="submit" class="btn btn-warning" onclick="loadTestData()">Click to load test data</button>
+            
+            <button type="submit" class=" btn btn-danger" onclick="localStorage.clear(); document.getElementById('bar-graph').innerHTML = '';">Click to clear storage</button>
+            <button type="submit" class="btn btn-warning" onclick="loadTestData(); document.getElementById('bar-graph').innerHTML = '';">Click to load test data</button>
             <button type="submit" class="btn btn-success" onclick="currTable.loadScores()">Load</button>
         </main>
 
