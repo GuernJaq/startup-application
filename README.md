@@ -37,3 +37,14 @@ DOM = document. used for editing html and css in js code
 
 STARTUP JS NOTES:
 My startup javascript is very similar to a lot of the Simon code, so I was able to repurpose some of those pieces to get a basis for my application. I've built the results storage and table generation in such a way that once I learn remote storage I'm hoping the transition will be smooth. The hardest part for me was figuring out how to use DOM to change the colors of meters based on their names, since the colors are defined by values within the meter that I don't fully understand. I'm hoping to add some other voting/results pages so I'd like to have code that's easy to adjust for different pokemon guesses, and I believe I've accomplished that. By adjusting some minor values I should be able to make some more guess pages. I won't add those right at this moment but those commits may be up by the time this is graded. 
+
+SIMON SERVICE NOTES
+I've been having minor issues using node, especially with curl and whatnot, but I've mostly figured it out. For one, when I use curl the syntax is 
+curl http://localhost:8080
+and when I use get and post I have to use the built in commands instead of using -x for custom commands. 
+Create endpoints for services I need to retrieve remotely
+Express package gives functionalities for use get and post, interfacing with middleware
+Cookie-parser handles cookie generation and access
+Error handlers have regular use cases but also take err param
+Need to ssh in to install node on server and restart it 
+
