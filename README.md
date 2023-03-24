@@ -48,3 +48,13 @@ Cookie-parser handles cookie generation and access
 Error handlers have regular use cases but also take err param
 Need to ssh in to install node on server and restart it 
 
+SIMON DB NOTES
+After walking through the mongo code, it should be extremely easy to update my startup, as the code I use to store and update my guess values is very close to the original simon code. I'm really hoping it will go slightly smoother than getting simon to work (I had several minor issues caused by missing sections of the instruction). 
+ADDITIONAL NOTES: 
+sudo vi /etc/environment to edit environment variables. 
+After updating run pm2 restart all --update-env and pm2 save to ensure code uses updated vars.
+mongo connection string : mongodb+srv://<username>:<password>@dallark.1fldlo4.mongodb.net
+To connect, construct the url with env variables, then make a new client with the url, then make/connect to the needed db and collection. 
+Use index.js to process api requests with express and implement actual functions in separate.
+Use await for mongo access.
+Mongo stores JSON objects in collections. 
