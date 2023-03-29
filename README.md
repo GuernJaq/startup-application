@@ -71,3 +71,15 @@ Check password- await bcrypt.compare(req.body.password, user.password) returns t
 If don't match, res.status(401).send({msg: 'Unauthorized'}).
 Store current authtokens in database and associate with users.
 On accessing parts of site, check for cookie labeled 'token' and search in database.
+
+SIMON WEBSOCKET NOTES:
+Use DOM to extract message text and clear message field for next message.
+Set up websocket - window.location.protocol to see if http or https, ws if http wss if https.
+Websocket(`${protocol}://${window.location.host}/ws`)
+Use onopen, onclose, and onmessage to send, appendMsg adds actual message text
+Use websocketserver to handle all active connections, upgrades.
+When connections send messages, label as active.
+Ping connections to determine which connections have gone inactive and which just haven't sent messages.
+Use server to send messages to everyone besides sender
+Remove connections when they close
+
