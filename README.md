@@ -37,3 +37,49 @@ DOM = document. used for editing html and css in js code
 
 STARTUP JS NOTES:
 My startup javascript is very similar to a lot of the Simon code, so I was able to repurpose some of those pieces to get a basis for my application. I've built the results storage and table generation in such a way that once I learn remote storage I'm hoping the transition will be smooth. The hardest part for me was figuring out how to use DOM to change the colors of meters based on their names, since the colors are defined by values within the meter that I don't fully understand. I'm hoping to add some other voting/results pages so I'd like to have code that's easy to adjust for different pokemon guesses, and I believe I've accomplished that. By adjusting some minor values I should be able to make some more guess pages. I won't add those right at this moment but those commits may be up by the time this is graded. 
+
+SIMON SERVICE NOTES
+I've been having minor issues using node, especially with curl and whatnot, but I've mostly figured it out. For one, when I use curl the syntax is 
+curl http://localhost:8080
+and when I use get and post I have to use the built in commands instead of using -x for custom commands. 
+Create endpoints for services I need to retrieve remotely
+Express package gives functionalities for use get and post, interfacing with middleware
+Cookie-parser handles cookie generation and access
+Error handlers have regular use cases but also take err param
+Need to ssh in to install node on server and restart it 
+
+SIMON DB NOTES
+After walking through the mongo code, it should be extremely easy to update my startup, as the code I use to store and update my guess values is very close to the original simon code. I'm really hoping it will go slightly smoother than getting simon to work (I had several minor issues caused by missing sections of the instruction). 
+ADDITIONAL NOTES: 
+sudo vi /etc/environment to edit environment variables. 
+After updating run pm2 restart all --update-env and pm2 save to ensure code uses updated vars.
+mongo connection string : mongodb+srv://<username>:<password>@dallark.1fldlo4.mongodb.net
+To connect, construct the url with env variables, then make a new client with the url, then make/connect to the needed db and collection. 
+Use index.js to process api requests with express and implement actual functions in separate.
+Use await for mongo access.
+Mongo stores JSON objects in collections. 
+
+SIMON LOGIN NOTES
+Prior to doing these readings, I was joking about just storing all the passwords for my application as plain text in my database, so I'm very glad to have learned how to do a login without the massive security risk. This also solves a couple minor gaps in my plan that I hadn't really considered much, such as limiting access to only logged-in users.
+ADDITIONAL NOTES:
+Use post service to create and set auth tokens.
+Login- search for UN, check password if exists.
+Use UUID to generate an authtoken.
+Use bcrypt.hash(password, 10) to encrypt passwords to store in database.
+Cookie-parser with httpOnly, secure, sameSite to store authtoken as a cookie
+Check password- await bcrypt.compare(req.body.password, user.password) returns true if entered password matches encrypted one in database.
+If don't match, res.status(401).send({msg: 'Unauthorized'}).
+Store current authtokens in database and associate with users.
+On accessing parts of site, check for cookie labeled 'token' and search in database.
+
+SIMON WEBSOCKET NOTES:
+Use DOM to extract message text and clear message field for next message.
+Set up websocket - window.location.protocol to see if http or https, ws if http wss if https.
+Websocket(`${protocol}://${window.location.host}/ws`)
+Use onopen, onclose, and onmessage to send, appendMsg adds actual message text
+Use websocketserver to handle all active connections, upgrades.
+When connections send messages, label as active.
+Ping connections to determine which connections have gone inactive and which just haven't sent messages.
+Use server to send messages to everyone besides sender
+Remove connections when they close
+
