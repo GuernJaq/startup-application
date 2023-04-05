@@ -36,14 +36,13 @@ class UserVote{
     }
 
     getPlayerName(){
-        return localStorage.getItem('userName') ?? 'Mystery player';
+        return localStorage.getItem('username') ?? 'Mystery player';
     }
 
     async saveVote(vote){
         const userName = this.getPlayerName();
         let votes = [];
         const votesText = localStorage.getItem('votes');
-        console.log(votesText)
         if(votesText){
             votes = JSON.parse(votesText);
         }
@@ -56,12 +55,18 @@ class UserVote{
         const newVote = {name: userName, vote: vote};
 
         let found = false;
-        for(const [i,prevVote] of votes.entries()){
-            if(userName === prevVote.name){
-                found = true;
-                break;
+        console.log(votes)
+        if(votes != null){
+            for(const [i,prevVote] of votes.entries()){
+                if(userName === prevVote.name){
+                    found = true;
+                    break;
+                }
             }
+        }else{
+            found = false;
         }
+        
         if(found){
             const alert = document.getElementById('alert')
             alert.innerHTML = '<div class="alert alert-warning" role="alert">You have already voted!</div>'
