@@ -23,9 +23,32 @@ function loadTestData(){
 
     function updateLocal(votes){
         localStorage.setItem('votes',votes);
+        aloCount = 0;
+        pikaCount = 0;
+        dittoCount = 0;
+        eeveeCount = 0;
+        unknownCount = 0;
         votes.forEach((vote) =>{
-            vote.userName
+            const currVote = vote.vote;
+            if(currVote === 'Alomomola'){
+                aloCount++;
+            }else if(currVote === 'Pikachu'){
+                pikaCount++;
+            }else if(currVote === 'Ditto'){
+                dittoCount++;
+            }else if(currVote === 'Eevee'){
+                eeveeCount++;
+            }else{
+                unknownCount++;
+            }
         })
+        totCount = aloCount + pikaCount + eeveeCount + dittoCount;
+        localStorage.setItem('Pikachu',pikaCount)
+        localStorage.setItem('Eevee',eeveeCount)
+        localStorage.setItem('Ditto',dittoCount)
+        localStorage.setItem('Alomomola',aloCount)
+        localStorage.setItem('numVotes',totCount)
+        console.log("Unknown: "+unknownCount)
     }
 
     function displayVotes(votes){
