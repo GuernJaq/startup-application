@@ -39,7 +39,7 @@ async function createUser(email, password) {
   return user;
 }
 
-function addVote(vote) {
+function addVote(vote,chosen) {
   voteCollection.insertOne(vote);
 }
 
@@ -48,10 +48,6 @@ function getAllVotes() {
   return cursor.toArray();
 }
 
-function getVoteTotals(){
-    const cursor = totVoteCollection.find();
-    return cursor.toArray();
-}
 
 module.exports = {
   getUser,
@@ -59,5 +55,4 @@ module.exports = {
   createUser,
   addVote,
   getAllVotes,
-  getVoteTotals,
 };

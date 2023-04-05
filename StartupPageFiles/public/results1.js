@@ -5,8 +5,30 @@ function loadTestData(){
     localStorage.setItem('Alomomola',5)
     localStorage.setItem('numVotes',45)
 }
-class loadTable{
-    loadScores(){
+
+    async function loadScores(){
+        let votes = [];
+        try{
+            const response = await fetch('api/votes');
+            votes = await response.json();
+        } catch {
+            const votesText = localStorage.getItem('votes');
+            if(votesText){
+                votes = JSON.parse(votesText);
+            }
+        }
+        updateLocal(votes);
+        displayVotes(votes);
+    }
+
+    function updateLocal(votes){
+        localStorage.setItem('votes',votes);
+        votes.forEach((vote) =>{
+            vote.userName
+        })
+    }
+
+    function displayVotes(votes){
         const names = ['Pikachu','Eevee','Ditto','Alomomola'];
         const total = Number(localStorage.getItem('numVotes'))
         const correctNum = localStorage.getItem('Alomomola')
@@ -41,13 +63,11 @@ class loadTable{
         }
     }
 
-    insertRule(rule) {
-        var sheet = window.document.styleSheets[0];
-        sheet.insertRule(rule, sheet.cssRules.length);
-      }
+function insertRule(rule) {
+    var sheet = window.document.styleSheets[0];
+    sheet.insertRule(rule, sheet.cssRules.length);
 }
 
-const currTable = new loadTable()
 
 function delay(milliseconds){
     return new Promise((resolve) => {

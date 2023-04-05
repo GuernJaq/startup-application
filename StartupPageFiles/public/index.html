@@ -24,12 +24,6 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="index.html">Login</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="vote1.html">Play</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="results1.html">Results</a>
-                    </li>
                 </menu>
                 <a class="back-button" href="https://pokeguesser.click/index.html">Back to Hub</a>
             </nav>
@@ -40,11 +34,48 @@
                 <p>Placeholder image</p>
                 <img src="Images/PoketrainerFin.png" alt="placeholder image" />
                 <h1>Welcome</h1>
-                <p>Login to play</p>
-                <form method="get" action="vote1.html">
-                    <input type="text" id="name" placeholder="Your name here"/>
-                    <button class="btn btn-primary" onclick="login()">Login</button>
-                </form>
+                <div id="loggedOut">
+                    <p>Login to play</p>
+                    <form method="get" action="vote1.html">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Username</span>
+                            <input
+                              class="form-control"
+                              type="text"
+                              id="username"
+                              placeholder="Your username here"
+                            />
+                          </div>
+                          <div class="input-group mb-3">
+                            <span class="input-group-text">Password</span>
+                            <input
+                              class="form-control"
+                              type="password"
+                              id="password"
+                              placeholder="Your password here"
+                            />
+                          </div>
+                        <button class="btn btn-primary" onclick="loginUser()">Login</button>
+                        <button class="btn btn-primary" onclick="createUser()">Register</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="modal fade" id="msgModal" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content text-dark">
+                        <div class="modal-body">error message here</div>
+                        <div class="modal-footer">
+                            <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal"
+                            > 
+                            Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
 
