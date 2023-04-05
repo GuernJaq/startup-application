@@ -84,6 +84,13 @@ meter{
     min-width: 500px;
 }
 
+.picture{
+    width: 300px;
+}
+
+.name{
+    font-size: large;
+}
 
 @media (max-height: 600px){
     header{
