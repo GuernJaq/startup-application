@@ -14,8 +14,7 @@ const url = `mongodb+srv://${userName}:${password}@${hostname}`;
 
 const client = new MongoClient(url);
 const userCollection = client.db('startup').collection('user');
-const voteCollection = client.db('startup').collection('allVotes');
-const totVoteCollection = client.db('startup').collection('totVotes');
+const voteCollection = client.db('startup').collection('votes');
 
 function getUser(email) {
   return userCollection.findOne({ email: email });

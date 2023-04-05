@@ -39,7 +39,7 @@ class UserVote{
         return localStorage.getItem('userName') ?? 'Mystery player';
     }
 
-    saveVote(vote){
+    async saveVote(vote){
         const userName = this.getPlayerName();
         let votes = [];
         const votesText = localStorage.getItem('votes');
@@ -47,12 +47,12 @@ class UserVote{
         if(votesText){
             votes = JSON.parse(votesText);
         }
-        votes = this.updateVotes(userName,vote,votes);
+        votes = await this.updateVotes(userName,vote,votes);
 
         localStorage.setItem('votes',JSON.stringify(votes));
     }
 
-    updateVotes(userName,vote,votes){
+    async updateVotes(userName,vote,votes){
         const newVote = {name: userName, vote: vote};
 
         let found = false;
@@ -66,37 +66,54 @@ class UserVote{
             const alert = document.getElementById('alert')
             alert.innerHTML = '<div class="alert alert-warning" role="alert">You have already voted!</div>'
             this.broadcastEvent(userName,DupeVote,{})
+            return votes;
 
             delay(4000).then((e) => {alert.innerHTML =''})
         }else{
-            votes.push(newVote);
-            //localStorage.setItem('scores',JSON.stringify(scores))
-            const currVotes = localStorage.getItem(vote)
-            let newVotes = JSON.parse(currVotes)
-            newVotes++;
-            localStorage.setItem(vote,newVotes)
-            
-            const numVotes = localStorage.getItem('numVotes')
-            let totVotes = JSON.parse(numVotes)
-            totVotes++;
-            localStorage.setItem('numVotes',totVotes)
+            votes.push(newVote)
+            try{
+                const response = await fetch('/api/vote', {
+                    method: 'POST',
+                    headers: {'content-type': 'application/json'},
+                    body: JSON.stringify(newVote),
+                });
 
-            let correct = this.buttons.get(vote)
-            if(correct){
-                const result = document.getElementById('result')
-                result.innerHTML = '<div class="alert alert-success" role="alert">You got it! Check results to see how others voted</div>'
-                this.broadcastEvent(userName,RightVote,{})
-            }else{
-                const result = document.getElementById('result')
-                result.innerHTML = '<div class="alert alert-danger" role="alert">That isn\'t right! Check results to see how others voted</div>'
-                this.broadcastEvent(userName,WrongVote,{})
+                this.updateLocalVotes(userName,vote,response);
+                return response;
+            }catch{
+                console.log('Oops');
+                this.updateLocalVotes(userName,vote,votes);
+                return votes;
             }
+        }
+    }
+
+    updateLocalVotes(userName,vote,votes){
+        //localStorage.setItem('scores',JSON.stringify(scores))
+        const currVotes = localStorage.getItem(vote)
+        let newVotes = JSON.parse(currVotes)
+        newVotes++;
+        localStorage.setItem(vote,newVotes)
+            
+        const numVotes = localStorage.getItem('numVotes')
+        let totVotes = JSON.parse(numVotes)
+        totVotes++;
+        localStorage.setItem('numVotes',totVotes)
+
+        let correct = this.buttons.get(vote)
+        if(correct){
+            const result = document.getElementById('result')
+            result.innerHTML = '<div class="alert alert-success" role="alert">You got it! Check results to see how others voted</div>'
+            this.broadcastEvent(userName,RightVote,{})
+        }else{
+            const result = document.getElementById('result')
+            result.innerHTML = '<div class="alert alert-danger" role="alert">That isn\'t right! Check results to see how others voted</div>'
+            this.broadcastEvent(userName,WrongVote,{})
         }
         const resBTN = document.getElementById('result-btn')
         resBTN.innerHTML = '<form method="get" action="results1.html"><button type="submit" class=" btn btn-success">Click for result page!</button></form>'
-
-        return votes;
     }
+        
 
     pressButton(button){
         this.saveVote(button.id);
