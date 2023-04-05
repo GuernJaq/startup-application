@@ -36,16 +36,22 @@ class UserVote{
     }
 
     getPlayerName(){
-        return localStorage.getItem('username') ?? 'Mystery player';
+        return localStorage.getItem('username');
     }
 
     async saveVote(vote){
         const userName = this.getPlayerName();
         let votes = [];
-        const votesText = localStorage.getItem('votes');
-        if(votesText){
-            votes = JSON.parse(votesText);
+        try{
+            const response = await fetch('api/votes');
+            votes = await response.json();
+        } catch {
+            const votesText = localStorage.getItem('votes');
+            if(votesText){
+                votes = JSON.parse(votesText);
+            }
         }
+        console.log(votes)
         votes = await this.updateVotes(userName,vote,votes);
 
         localStorage.setItem('votes',JSON.stringify(votes));
