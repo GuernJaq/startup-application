@@ -83,3 +83,5 @@ Ping connections to determine which connections have gone inactive and which jus
 Use server to send messages to everyone besides sender
 Remove connections when they close
 
+STARTUP SERVICE NOTES:
+Implementing the services came with an array of difficulties, mostly due to taking chunks of code from simon and forgetting to change the variables and strings. Another issue came from just figuring out how to use websockets and third-party endpoints, as my original application didn't have them. I used websockets in a similar way to simon, where whenever a user votes it messages everyone else who is currently online. I just sent simple messages related to users votes and whether they were correct, incorrect, or trying to vote again. The third-party endpoints are courtesy of pokeAPI, every time the button is clicked, it requests a random pokemon and returns the name and image of it. I figure this would be a little 'study' method since it gives and image and the answer. Overall, I was able to get each of these pieces without too many difficulties aside from minor bugs, and I'm hoping the final conversion to react goes similarly smoothly.
